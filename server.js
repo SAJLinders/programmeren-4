@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const Book = require('./classes/book');
 const book_routes = require('./routes/book_routes');
+const city_routes = require('./routes/city_routes');
 
 let port = process.env.PORT || 3000;
 app.use('/', book_routes);
+app.use('/', city_routes);
 
 app.use('*', function(req, res, next){
     console.log('server.js: The super endpoint was called');
